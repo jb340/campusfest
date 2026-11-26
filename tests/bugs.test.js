@@ -53,7 +53,7 @@ test('[BUG-4] Un evento sin costo dice "Gratis"', () => {
   assert.equal(formatPrice(50), '$50');
 });
 
-test.skip('[BUG-5] "1 lugar" en singular', () => {
+test('[BUG-5] "1 lugar" en singular', () => {
   assert.equal(spotsLabel(event({ capacity: 120, registered: 119 })), '1 lugar');
   assert.equal(spotsLabel(event({ capacity: 20, registered: 12 })), '8 lugares');
 });
