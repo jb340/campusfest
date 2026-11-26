@@ -43,7 +43,7 @@ test('[BUG-2] La búsqueda ignora acentos y mayúsculas', () => {
   assert.equal(matchesSearch(brazo, 'ROBÓTICO'), true, '"ROBÓTICO" debe encontrar "robótico"');
 });
 
-test.skip('[BUG-3] La fecha corta muestra el mes correcto', () => {
+test('[BUG-3] La fecha corta muestra el mes correcto', () => {
   assert.equal(formatShortDate('2026-11-24'), '24/11');
   assert.equal(formatShortDate('2026-12-02'), '02/12');
 });

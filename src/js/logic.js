@@ -40,9 +40,10 @@ export function formatPrice(price) {
 // ---------- Fechas ----------
 
 export function formatShortDate(dateStr) {
-  const date = toDate(dateStr);
-  return `${pad(date.getDate())}/${pad(date.getMonth())}`;
+  const [, month, day] = String(dateStr).split('-');
+  return `${day}/${month}`;
 }
+
 
 export function weekdayName(dateStr) {
   return WEEKDAYS[toDate(dateStr).getDay()];
