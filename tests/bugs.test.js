@@ -28,7 +28,7 @@ test('[BUG-0 · guiado] Los cupos nunca son negativos y un evento sobrevendido e
   assert.equal(isFull(sobrevendido), true, 'un evento con más inscritos que cupo debe estar lleno');
 });
 
-test.skip('[BUG-1] Los eventos se ordenan por fecha real (noviembre antes que diciembre)', () => {
+test('[BUG-1] Los eventos se ordenan por fecha real (noviembre antes que diciembre)', () => {
   const ordenados = sortByDate([
     event({ id: 'posada', date: '2026-12-02' }),
     event({ id: 'hackathon', date: '2026-11-23' }),

@@ -63,11 +63,10 @@ export function countdownLabel(dateStr, todayStr) {
   return `Faltan ${days} días`;
 }
 
-export function sortByDate(events) {
-  return [...events].sort((a, b) =>
-    formatShortDate(a.date).localeCompare(formatShortDate(b.date)),
-  );
+function sortByDate(events) {
+  return [...events].sort((a, b) => new Date(a.date) - new Date(b.date));
 }
+
 
 // ---------- Búsqueda y filtros ----------
 
