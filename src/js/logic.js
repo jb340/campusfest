@@ -58,16 +58,18 @@ export function daysUntil(dateStr, todayStr) {
   return Math.round((toDate(dateStr) - toDate(todayStr)) / MS_PER_DAY);
 }
 
-export function countdownLabel(dateStr, todayStr) {
-  const days = daysUntil(dateStr, todayStr);
-  if (days === 0) {
-    return 'Hoy';
-  }
-  if (days === 1) {
-    return 'Mañana';
-  }
-  return `Faltan ${days} días`;
+export function countdownLabel(eventDateStr, todayStr) {
+  const MS_PER_DAY = 1000 * 60 * 60 * 24;
+  const eventDate = new Date(`${eventDateStr}T00:00:00Z`);
+  const today = new Date(`${todayStr}T00:00:00Z`);
+  const diffDays = Math.round((eventDate - today) / MS_PER_DAY);
+
+  if (diffDays < 0) return 'Finalizado';
+  if (diffDays === 0) return 'Hoy';
+  if (diffDays === 1) return 'Mañana';
+  return `Faltan ${diffDays} días`;
 }
+
 
 function sortByDate(events) {
   return [...events].sort((a, b) => new Date(a.date) - new Date(b.date));
