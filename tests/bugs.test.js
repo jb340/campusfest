@@ -58,7 +58,7 @@ test('[BUG-5] "1 lugar" en singular', () => {
   assert.equal(spotsLabel(event({ capacity: 20, registered: 12 })), '8 lugares');
 });
 
-test.skip('[BUG-6] Un evento que ya pasó dice "Finalizado"', () => {
+test('[BUG-6] Un evento que ya pasó dice "Finalizado"', () => {
   assert.equal(countdownLabel('2026-11-23', '2026-11-26'), 'Finalizado');
   assert.equal(countdownLabel('2026-11-30', '2026-11-26'), 'Faltan 4 días');
 });
