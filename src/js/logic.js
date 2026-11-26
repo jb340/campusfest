@@ -15,7 +15,7 @@ function pad(number) {
 
 // ---------- Cupos ----------
 
-function spotsLeft(event) {
+export function spotsLeft(event) {
   return Math.max(0, event.capacity - event.registered);
 }
 
@@ -71,7 +71,7 @@ export function countdownLabel(eventDateStr, todayStr) {
 }
 
 
-function sortByDate(events) {
+export function sortByDate(events) {
   return [...events].sort((a, b) => new Date(a.date) - new Date(b.date));
 }
 
